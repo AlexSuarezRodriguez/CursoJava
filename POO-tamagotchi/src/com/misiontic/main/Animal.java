@@ -1,5 +1,4 @@
 package com.misiontic.main;
-import java.awt.Color;
 public class Animal {
     
     double weight;
@@ -11,6 +10,7 @@ public class Animal {
     
     //Tengo que dar una respuesta cuando termine de comer?
     //Yo quiero decir si ya termine de comer
+    
     private void eat() {
         if(hungry <= 5) {
         	hungry = 0;
@@ -22,44 +22,44 @@ public class Animal {
         }
     }
     private void sleep() {
-    	if (sleep <=5 ) {
-    		sleep=0;
+    	if (sleep <=10 ) {
+    		sleep=5;
     		System.out.println("Estoy inperactivo ");
-    		health = health -1;
-    		
-    	}
-    	else {
-    		sleep=sleep-10;
+    		health = health +1;	
+    	}else {
+    		sleep=sleep-3;
     		weight=weight-1;
     	}
-        
     }
     private void makeExercise() {
     	if (sleep <40) {
     		System.out.println("que comienze el ejercicio");
-    		health=health-3;
-    		weight=weight -0.5;
-    	}
-    	else {
+    		health=health + 1;
+    		weight=weight - 0.1;
+    		hungry=hungry-2;
+    	}else {
     		System.out.println("trata de descansar");	  
     		sleep=sleep-3;
+    		weight=weight+1;
+    		hungry=hungry-1;
     	}
     }
     private void play() {
     	if (happiness< 30) {
     		System.out.println("que empieze el juego");
-    		happiness =happiness-5;
-    	}
-    	else {
-    		System.out.println("");
-    	}
-    	
-        
+    		happiness =happiness-1;
+    		health=health + 1;
+    	}else {
+    		System.out.println("busca la manera de ser feliz");
+    		hungry=hungry-2;
+    		sleep=sleep-1;
+    		happiness=happiness+2;	
+    	}     
     }
     private void gotoVeterinary() {
     	health =health+2;
-    	hungry= hungry -1;
-    	
+    	hungry= hungry +1;
+    	happiness=happiness+1; 	
     }
     private void awake() {
     	
